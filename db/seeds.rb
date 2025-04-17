@@ -1,0 +1,2 @@
+User.create(email: 'user1@yopmail.com', encrypted_password: 'password1', description: 'User 1 description', first_name: 'John', last_name: 'Doe')
+User.create(email: 'user2@yopmail.com', encrypted_password: 'password2', description: 'User 2 description', first_name: 'Jane', last_name: 'Doe')

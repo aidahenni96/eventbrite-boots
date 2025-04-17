@@ -1,0 +1,107 @@
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap-reboot";
+/* Reset de base */
+body, h1, h2, h3, p, ul, ol, li, a {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style général du corps */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #232424;
+  color: #333;
+  padding: 20px;
+}
+
+/* Titres */
+h1, h2, h3 {
+  color: #444;
+  margin-bottom: 15px;
+}
+
+/* Liens */
+a {
+  color: #308585;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Boutons */
+button {
+  background-color: #335374;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Conteneur principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation */
+.navbar {
+  background-color: #2a3a35;
+  padding: 10px 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar a {
+  color: white;
+  margin: 0 10px;
+}
+
+/* Pied de page */
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f1f1f1;
+  color: #666;
+}
+.luxe-navbar {
+  background: linear-gradient(135deg, #1c1c1c, #2c2c2c);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.luxe-navbar .nav-link {
+  color: #ddd;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.luxe-navbar .nav-link:hover {
+  color: gold;
+  text-shadow: 0 0 5px gold;
+}
+
+.luxe-navbar .btn-outline-light {
+  border-color: gold;
+  color: gold;
+}
+
+.luxe-navbar .btn-outline-light:hover {
+  background-color: gold;
+  color: black;
+}

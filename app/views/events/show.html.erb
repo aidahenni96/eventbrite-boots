@@ -1,0 +1,18 @@
+<h1><%= @event.title %></h1>
+<p><%= @event.description %></p>
+<p>Nombre d'inscrits : <%= @event.attendances.count %></p>
+<p>Créateur : <%= @event.admin.email %></p>
+<p>Date de début : <%= @event.start_date %></p>
+<p>Date de fin : <%= @event.start_date + @event.duration.minutes %></p>
+<p>Lieu : <%= @event.location %></p>
+<p>Prix : <%= @event.price %> €</p>
+<p style="color: green"><%= notice %></p>
+
+<%= render @event %>
+
+<div>
+  <%= link_to "Edit this event", edit_event_path(@event) %> |
+  <%= link_to "Back to events", events_path %>
+
+  <%= button_to "Destroy this event", @event, method: :delete %>
+</div>

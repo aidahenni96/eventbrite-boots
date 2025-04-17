@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Events" %>
+
+<h1>Events</h1>
+<div class="jumbotron">
+  <h1 class="display-4">Événements</h1>
+  <p class="lead">Voici la liste des événements disponibles.</p>
+  <hr class="my-4">
+  <ul>
+    <% @events.each do |event| %>
+      <li><%= link_to event.title, event_path(event) %></li>
+    <% end %>
+  </ul>
+</div>
+<div id="events">
+  <% @events.each do |event| %>
+    <%= render event %>
+    <p>
+      <%= link_to "Show this event", event %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New event", new_event_path %>
