@@ -15,5 +15,5 @@ end
 
 
 def send_participation_email
-  EventMailer.participation_email(self.event, self.user).deliver_later
+  EventMailer.participation_email(self, self.admin).deliver_later
 end

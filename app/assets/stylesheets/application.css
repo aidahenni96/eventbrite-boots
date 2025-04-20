@@ -11,7 +11,7 @@ body, h1, h2, h3, p, ul, ol, li, a {
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
-  background-color: #232424;
+  background-color: #aac2c2;
   color: #333;
   padding: 20px;
 }
@@ -105,3 +105,14 @@ button:hover {
   background-color: gold;
   color: black;
 }
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+.img-fluid:hover {
+  transform: scale(1.05);
+}
+

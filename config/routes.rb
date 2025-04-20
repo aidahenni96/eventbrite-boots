@@ -1,22 +1,30 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :attendances
-  resources :events
-  resources :users
+  # Configuration Devise
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations',
+    passwords: 'users/passwords'
+  }
+
+  # Pages statiques
+  get "static_pages/index"
+  get "static_pages/secret"
+
+  # Ressources utilisateurs
+  resources :users, only: [:index, :show, :edit, :update, :destroy]
+
+  # PWA
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  # Ressources événements
+  resources :events do
+    resources :attendees, only: [:index, :create, :destroy]
+  end
+
+  # Définir la page d'accueil
   root "events#index"
-  
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
+  # Vérification de l'état de santé de l'application
   get "up" => "rails/health#show", as: :rails_health_check
-
-  # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
-  # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
-  # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
-
-  # Defines the root path route ("/")
-  # root "posts#index"
 end

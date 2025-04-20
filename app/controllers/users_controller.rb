@@ -64,10 +64,11 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params.expect(:id))
+      @user = User.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+  redirect_to root_path, alert: "Utilisateur introuvable."
     end
-
-    def correct_user
+def correct_user
       @user = User.find(params[:id])
       redirect_to(root_path) unless @user == current_user
     end
@@ -76,4 +77,4 @@ class UsersController < ApplicationController
     def user_params
       params.expect(user: [ :email, :encrypted_password, :description, :first_name, :last_name ])
     end
-end
+  end
