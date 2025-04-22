@@ -18,7 +18,8 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem 'devise'
 gem 'letter_opener'
-
+gem 'stripe'
+gem 'dotenv', groups: [:development, :test]
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
@@ -62,4 +63,6 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem 'sassc-rails'
 end
+

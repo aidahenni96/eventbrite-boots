@@ -24,6 +24,12 @@ Rails.application.routes.draw do
 
   # Définir la page d'accueil
   root "events#index"
+  
+scope '/checkout' do
+  post '/create-checkout-session', to: 'payments#create_checkout_session'
+  get '/success', to: 'payments#success'
+  get '/cancel', to: 'payments#cancel'
+end
 
   # Vérification de l'état de santé de l'application
   get "up" => "rails/health#show", as: :rails_health_check

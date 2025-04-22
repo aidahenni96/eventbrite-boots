@@ -1,0 +1,79 @@
+  This is a style sheet for the HTML page
+*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+h1 {
+    margin: 0;
+}
+nav {
+    margin: 20px 0;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+nav ul li a {
+    color: #35424a;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    text-decoration: underline;
+}
+main {
+    padding: 20px;
+}
+footer {
+    background: #35424a;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}   
+footer p {
+    margin: 0;
+} 
+/* End of style.css */
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('fonts/MyCustomFont.woff2') format('woff2'),
+         url('fonts/MyCustomFont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('fonts/MyCustomFont-Bold.woff2') format('woff2'),
+         url('fonts/MyCustomFont-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('fonts/MyCustomFont-Italic.woff2') format('woff2'),
+         url('fonts/MyCustomFont-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('fonts/MyCustomFont-BoldItalic.woff2') format('woff2'),
+         url('fonts/MyCustomFont-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
