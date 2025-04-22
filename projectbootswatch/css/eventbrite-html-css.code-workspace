@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"name": "eventbrite-html-css",
+			"path": "../../../Documents/THP/S8/eventbrite-html-css"
+		},
+		{
+			"name": "projectbootswatch",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "eventbrite-html-css",
+		"liveServer.settings.port": 5501
+	}
+}
