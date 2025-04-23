@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     passwords: 'users/passwords'
   }
 
+
   # Pages statiques
   get "static_pages/index"
   get "static_pages/secret"

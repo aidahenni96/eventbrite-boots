@@ -1,27 +1,9 @@
 <!DOCTYPE html>
-<html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <%= render 'projectbootswatch/navbar' %>
 
-  <head>
-
-  
-  
-<script>
-
-const stripe = Stripe("<%= ENV['STRIPE_PUBLIC_KEY'] %>");
-document.getElementById("checkout-button").addEventListener("click", () => {
-  fetch("/create-checkout-session", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    }
-  })
-  .then(res => res.json())
-  .then(data => {
-    stripe.redirectToCheckout({ sessionId: data.id });
-  });
-});
-</script>
-<script src="https://js.stripe.com/v3/"></script>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <title><%= content_for(:title) || "Eventbrite A" %></title>
@@ -43,9 +25,11 @@ document.getElementById("checkout-button").addEventListener("click", () => {
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    
   </head>
 
   <body>
+  
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Eventbrite Clone</a>
       <div class="collapse navbar-collapse">
@@ -93,8 +77,25 @@ document.getElementById("checkout-button").addEventListener("click", () => {
     <script src="https://js.stripe.com/v3/"></script>
     <button id="checkout-button">Payer maintenant</button>
 
+            <script>
+
+        const stripe = Stripe("<%= ENV['STRIPE_PUBLIC_KEY'] %>");
+        document.getElementById("checkout-button").addEventListener("click", () => {
+          fetch("/create-checkout-session", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            }
+          })
+          .then(res => res.json())
+          .then(data => {
+            stripe.redirectToCheckout({ sessionId: data.id });
+          });
+        });
+        </script>
+            <script src="https://js.stripe.com/v3/"></script>
 
 
   </body>
-
+<%=render 'projectbootswatch/footer' %>
 </html>

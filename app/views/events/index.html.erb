@@ -1,8 +1,22 @@
-<p style="color: green"><%= notice %></p>
+
+<%= render 'projectbootswatch/banner' %>
+<%= render 'projectbootswatch/cards' %>
+<%=render 'projectbootswatch/index' %>
+<%= render 'projectbootswatch/comments' %>
+<%= render 'projectbootswatch/element_presentation' %>
+<%=render 'projectbootswatch/resource_presentation' %>
+<%=render 'projectbootswatch/custom_organism' %>
+<% if notice %>
+  <div class="alert alert-info">
+    <%= notice %>
+  </div>
+  <p style="color: green"><%= notice %></p>
+<% end %>
 
 <% content_for :title, "Events" %>
 
 <h1>Events</h1>
+
 <div class="jumbotron">
   <h1 class="display-4">Événements</h1>
   <p class="lead">Voici la liste des événements disponibles.</p>
@@ -13,17 +27,15 @@
     <% end %>
   </ul>
 </div>
+
 <div id="events">
   <% @events.each do |event| %>
     <%= render event %>
     <p>
       <%= link_to "Show this event", event %>
     </p>
-
     <p>
-    <%= link_to "New event", new_event_path %>
+      <%= link_to "New event", new_event_path %>
     </p>
-    
   <% end %>
 </div>
-
